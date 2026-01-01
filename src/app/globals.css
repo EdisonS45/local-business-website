@@ -1,0 +1,23 @@
+/* src/app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-semibold tracking-tight text-slate-900;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
