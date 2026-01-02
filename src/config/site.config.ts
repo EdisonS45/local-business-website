@@ -9,22 +9,28 @@ export const siteConfig = {
   },
 
   contact: {
-    phone: "+91XXXXXXXXXX",
-    whatsapp: "91XXXXXXXXXX",
+    phone: "9597052681",
+    whatsapp: "9597052681",
     email: "rvspatialsurveys@gmail.com",
   },
 
   location: {
-    city: "Tiruppur",
+    city: "Coimbatore & Tiruppur",
     state: "Tamil Nadu",
     country: "India",
     addressText: "Tiruppur, Tamil Nadu",
     serviceAreas: ["Tiruppur", "Coimbatore", "Erode"],
+    googleReviewUrl:"https://share.google/w9tsA1xskCRE1G26e",
     googleMapEmbedUrl: "https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED",
   },
 
   branding: {
     primaryColor: "slate",
     accentColor: "blue",
+  },
+  estimator: {
+    effortLabel: "Estimated Effort Score",
+    disclaimer:
+      "Effort score is indicative. Final quotation depends on site conditions and documentation.",
   },
 };

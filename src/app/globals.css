@@ -1,23 +1,61 @@
-/* src/app/globals.css */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    @apply scroll-smooth;
-  }
+/* -----------------------------
+   BASE RESET
+----------------------------- */
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    @apply bg-white text-slate-800 antialiased;
-  }
+body {
+  @apply bg-slate-50 text-ink font-body antialiased;
+}
 
-  h1, h2, h3, h4 {
-    @apply font-semibold tracking-tight text-slate-900;
-  }
+/* -----------------------------
+   TYPOGRAPHY SYSTEM
+----------------------------- */
+h1, h2, h3, h4 {
+  @apply font-heading text-ink tracking-tight;
+}
 
-  p {
-    @apply leading-relaxed;
-  }
+p {
+  @apply text-slate-600 leading-relaxed;
+}
+
+/* -----------------------------
+   LINK & CTA BASICS
+----------------------------- */
+a {
+  @apply transition-colors;
+}
+
+.cta-primary {
+  @apply bg-safety text-white font-semibold px-6 py-3 rounded-md
+         hover:bg-safety-hover;
+}
+
+.cta-outline {
+  @apply border border-slate-300 text-ink px-5 py-3 rounded-md
+         hover:bg-slate-100;
+}
+
+/* -----------------------------
+   TOOL-LIKE UI FEEL
+----------------------------- */
+.card {
+  @apply bg-white border border-slate-200 rounded-lg;
+}
+
+.section {
+  @apply py-16;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-heading font-bold;
+}
+
+.section-subtitle {
+  @apply mt-2 text-slate-600 max-w-2xl;
 }
