@@ -1,12 +1,11 @@
 import "./globals.css";
-import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import StickyMobileCTA from "@/components/common/StickyMobileCTA";
+import FloatingChat from "@/components/common/FloatingChat";
 import { ToastProvider } from "@/components/common/Toast";
-import { seoConfig } from "@/config/seo.config";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -18,11 +17,6 @@ const inter = Inter({
   variable: "--font-body",
 });
 
-export const metadata: Metadata = {
-  title: seoConfig.title,
-  description: seoConfig.description,
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -31,12 +25,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} ${inter.variable} flex min-h-screen flex-col antialiased`}
+        className={`${manrope.variable} ${inter.variable} min-h-screen flex flex-col bg-background text-ink`}
       >
         <ToastProvider>
           <Navbar />
-          <main className="flex-1">{children}</main>
+
+          <main className="flex-1">
+            {children}
+          </main>
+
           <Footer />
+
+          {/* Desktop only – delayed attention */}
+          <FloatingChat delay={4000} />
+
+          {/* Mobile only – conversion focused */}
           <StickyMobileCTA />
         </ToastProvider>
       </body>

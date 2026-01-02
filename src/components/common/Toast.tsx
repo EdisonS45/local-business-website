@@ -1,29 +1,27 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState } from "react";
 
 interface ToastContextType {
   showToast: (message: string) => void;
 }
 
-const ToastContext = createContext<ToastContextType | undefined>(undefined);
+const ToastContext = createContext<ToastContextType | null>(null);
 
-export function ToastProvider({ children }: { children: ReactNode }) {
+export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [message, setMessage] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
     setMessage(msg);
-    setTimeout(() => setMessage(null), 3500);
+    setTimeout(() => setMessage(null), 2500);
   };
 
   return (
     <ToastContext.Provider value={{ showToast }}>
       {children}
-
       {message && (
-        <div className="fixed top-4 right-4 z-[100] bg-white border border-slate-200 shadow-lg rounded-md px-4 py-3 text-sm text-slate-700">
-          <strong className="block text-ink">Connection Established</strong>
-          <span>{message}</span>
+        <div className="fixed top-6 right-6 z-50 rounded-lg bg-surface border border-border px-4 py-3 shadow-hover text-sm">
+          {message}
         </div>
       )}
     </ToastContext.Provider>

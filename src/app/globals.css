@@ -2,60 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-/* -----------------------------
-   BASE RESET
------------------------------ */
+/* -------------------------
+   BASE
+-------------------------- */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-slate-50 text-ink font-body antialiased;
+  @apply bg-background text-ink font-body antialiased;
 }
 
-/* -----------------------------
-   TYPOGRAPHY SYSTEM
------------------------------ */
 h1, h2, h3, h4 {
-  @apply font-heading text-ink tracking-tight;
+  @apply font-heading text-ink;
 }
 
 p {
-  @apply text-slate-600 leading-relaxed;
+  @apply text-muted leading-relaxed;
 }
 
-/* -----------------------------
-   LINK & CTA BASICS
------------------------------ */
-a {
-  @apply transition-colors;
-}
-
-.cta-primary {
-  @apply bg-safety text-white font-semibold px-6 py-3 rounded-md
-         hover:bg-safety-hover;
-}
-
-.cta-outline {
-  @apply border border-slate-300 text-ink px-5 py-3 rounded-md
-         hover:bg-slate-100;
-}
-
-/* -----------------------------
-   TOOL-LIKE UI FEEL
------------------------------ */
-.card {
-  @apply bg-white border border-slate-200 rounded-lg;
-}
+/* -------------------------
+   LAYOUT RHYTHM
+-------------------------- */
 
 .section {
-  @apply py-16;
+  @apply py-24;
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-heading font-bold;
+  @apply text-3xl md:text-4xl font-heading font-semibold;
 }
 
 .section-subtitle {
-  @apply mt-2 text-slate-600 max-w-2xl;
+  @apply mt-5 max-w-2xl text-muted;
+}
+
+/* -------------------------
+   CARD SYSTEM
+-------------------------- */
+
+.card {
+  @apply bg-surface border border-border rounded-lg shadow-card;
+}
+
+.card-hover {
+  @apply transition-shadow hover:shadow-hover;
+}
+
+/* -------------------------
+   CTA SYSTEM (POLISHED)
+-------------------------- */
+
+.cta-primary {
+  @apply inline-flex items-center justify-center rounded-lg
+  bg-primary text-white font-medium
+  px-6 py-3
+  transition-colors
+  hover:bg-primary-hover;
+}
+
+.cta-outline {
+  @apply inline-flex items-center justify-center rounded-lg
+  border border-border bg-surface
+  px-6 py-3
+  font-medium text-ink
+  transition
+  hover:bg-background;
+}
+
+/* -------------------------
+   LINKS
+-------------------------- */
+
+a {
+  @apply text-ink;
+}
+
+/* -------------------------
+   MOBILE TOUCH SAFETY
+-------------------------- */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }

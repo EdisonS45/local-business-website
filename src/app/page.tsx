@@ -1,46 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { servicesConfig } from "@/config/services.config";
 import { siteConfig } from "@/config/site.config";
+import { servicesConfig } from "@/config/services.config";
 import EstimatorTrigger from "@/components/common/EstimatorTrigger";
+import ClientLogos from "@/components/sections/ClientLogos";
 
 export default function HomePage() {
-  const phaseAServices = servicesConfig.filter((s) => s.phase === "A");
+  const phaseAServices = servicesConfig.filter(
+    (service) => service.phase === "A"
+  );
 
   return (
     <>
       {/* HERO */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left */}
-          <div>
-            <h1 className="text-4xl md:text-5xl font-heading font-bold">
-              Precision Land Surveying in {siteConfig.location.city}
+      <section className="bg-surface">
+        <div className="container grid lg:grid-cols-2 gap-12 py-6 items-center">
+          {/* LEFT */}
+          <div className="max-w-xl">
+            <h1 className="text-4xl md:text-5xl font-heading font-medium leading-[1.15] tracking-tight">
+              Precision Land Surveying in{" "}
+              <span className="text-primary">
+                {siteConfig.location.city}
+              </span>
             </h1>
 
-            <p className="mt-4 text-lg text-slate-600 max-w-xl">
-              Government-approved licensed surveyors delivering accurate,
-              approval-ready reports with speed and clarity.
+            <p className="mt-4 text-base text-muted-foreground">
+              Government-approved licensed surveyors delivering
+              approval-ready reports with accuracy, clarity,
+              and predictable timelines.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <EstimatorTrigger />
-
+            <div className="mt-8 flex items-center gap-4">
               <a
                 href={`tel:${siteConfig.contact.phone}`}
                 className="cta-primary"
               >
                 Call Engineer
               </a>
+
+              <EstimatorTrigger />
             </div>
           </div>
 
-          {/* Right */}
-          <div className="relative h-[360px] w-full bg-slate-100 rounded-lg overflow-hidden">
+          {/* RIGHT */}
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg ">
             <Image
-              src="/images/hero-surveyor.jpg"
-              alt="Land surveyor using total station"
+              src="/images/hero-surveyor3.png"
+              alt="Survey engineer using total station"
               fill
               className="object-cover"
               priority
@@ -49,71 +56,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TRUST BAR */}
-      <section className="bg-slate-100 border-t border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-sm">
-          <div>
-            <p className="font-semibold text-ink">Govt Licensed</p>
-            <p className="text-slate-600">Authorized survey practice</p>
-          </div>
-          <div>
-            <p className="font-semibold text-ink">15+ Years</p>
-            <p className="text-slate-600">Field experience</p>
-          </div>
-          <div>
-            <p className="font-semibold text-ink">Modern Equipment</p>
-            <p className="text-slate-600">GPS & digital tools</p>
-          </div>
-          <div>
-            <p className="font-semibold text-ink">Fast Turnaround</p>
-            <p className="text-slate-600">Clear timelines</p>
-          </div>
+      {/* CLIENT LOGOS */}
+      <section className="border-t border-border bg-background">
+        <div className="container py-10">
+          <ClientLogos />
         </div>
       </section>
 
-      {/* SERVICES GRID */}
-      <section className="section">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">
-            Survey Services We Specialize In
-          </h2>
-          <p className="section-subtitle">
-            Choose the service that matches your requirement. Each service
-            page explains when it is needed and what you receive.
-          </p>
+      {/* SERVICES */}
+      <section className="bg-background">
+        <div className="container py-16">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl md:text-3xl font-heading font-medium">
+              Survey Services We Specialize In
+            </h2>
+
+            <p className="mt-3 text-sm text-muted-foreground">
+              Each service clearly explains when it is required,
+              what documents are needed, and what you will receive.
+            </p>
+          </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {phaseAServices.map((service) => (
-              <div key={service.id} className="card p-6 flex flex-col">
-                <h3 className="text-lg font-heading font-semibold">
+              <div
+                key={service.id}
+                className="card p-5 flex flex-col transition-shadow hover:shadow-md"
+              >
+                <h3 className="text-base font-heading font-semibold">
                   {service.title}
                 </h3>
 
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-muted-foreground">
                   {service.shortDescription}
                 </p>
 
-                <p className="mt-3 text-sm">
-                  <span className="font-medium text-ink">Best for:</span>{" "}
+                <p className="mt-3 text-xs">
+                  <span className="font-medium text-ink">
+                    Best for:
+                  </span>{" "}
                   {service.bestFor}
                 </p>
 
-                <div className="mt-auto pt-6">
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-safety font-medium hover:underline"
-                  >
-                    View Details →
-                  </Link>
-                </div>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="mt-4 text-sm text-primary font-medium"
+                >
+                  View Details →
+                </Link>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link href="/services" className="cta-outline">
-              View All Services
-            </Link>
           </div>
         </div>
       </section>
