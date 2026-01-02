@@ -37,7 +37,7 @@ export default function RootLayout({
           <Footer />
 
           {/* Desktop only – delayed attention */}
-          <FloatingChat delay={4000} />
+          <FloatingChat />
 
           {/* Mobile only – conversion focused */}
           <StickyMobileCTA />
