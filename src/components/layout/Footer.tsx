@@ -22,15 +22,7 @@ export default function Footer() {
               </p>
             </div>
             
-            {/* COMPACT REVIEW SECTION - No longer "leaking" down */}
-            <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl max-w-sm">
-              <div className="text-center sm:text-left">
-                <p className="text-[11px] font-bold text-white uppercase tracking-wider">Trusted Quality</p>
-                <p className="text-[10px] text-slate-500 mt-1">Help us grow on Google</p>
-              </div>
-              <div className="h-px w-8 bg-white/10 hidden sm:block" />
-              <ReviewCTA /> 
-            </div>
+            
           </div>
 
           {/* Column 2: Navigation Links */}
