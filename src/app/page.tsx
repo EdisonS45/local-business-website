@@ -148,7 +148,7 @@ export default function HomePage() {
             </div>
             
             <Link 
-              href={siteConfig.links?.googleBusiness || "#"} 
+              href={siteConfig.business.name || "#"} 
               target="_blank"
               className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-600 hover:border-emerald-500 hover:text-emerald-600 transition-all shadow-sm"
             >
