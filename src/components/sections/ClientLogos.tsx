@@ -5,33 +5,36 @@ const clients = [
   "/images/clients/client2.svg",
   "/images/clients/client3.png",
   "/images/clients/client4.webp",
-  "/images/clients/client5.png",
+  "/images/clients/client5.svg",
 ];
 
 export default function ClientLogos() {
   return (
-    <section className="bg-background border-y border-border">
-      <div className="container py-14">
-        <p className="text-center text-sm text-muted mb-8">
-          Trusted by companies, developers, and institutions
-        </p>
+    <div className="relative overflow-hidden py-8">
+      {/* Fade edges */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
 
-        <div className="flex flex-wrap items-center justify-center gap-10">
-          {clients.map((logo, idx) => (
-            <div
-              key={idx}
-              className="relative h-10 w-32 opacity-70 hover:opacity-100 transition"
-            >
+      {/* The Moving Container */}
+      <div className="flex w-max animate-logo-marquee hover:[animation-play-state:paused]">
+        {/* Render logos multiple times for a seamless loop */}
+        {[...clients, ...clients, ...clients].map((logo, idx) => (
+          <div
+            key={idx}
+            className="flex items-center justify-center px-12"
+          >
+            <div className="relative h-12 w-32 transition-transform duration-300 hover:scale-110">
               <Image
                 src={logo}
                 alt="Client logo"
                 fill
                 className="object-contain"
+                priority={idx < 10}
               />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

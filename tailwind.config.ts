@@ -34,7 +34,16 @@ const config: Config = {
           soft: "#dcfce7", // green-100
         },
       },
-
+      
+keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' }, // Move exactly half the width
+        },
+      },
+      animation: {
+        'logo-marquee': 'marquee 30s linear infinite', // Adjust '30s' to make it faster or slower
+      },
       fontFamily: {
         heading: ["var(--font-heading)"],
         body: ["var(--font-body)"],
