@@ -28,7 +28,7 @@ export default function StickyMobileCTA() {
 
         <a
           href={`tel:${siteConfig.contact.phone}`}
-          className="flex-1 flex items-center justify-center gap-2 text-white bg-safety"
+          className="flex-1 flex items-center justify-center gap-2 text-white bg-safety bg-green-600"
         >
           <Phone size={18} />
           Call Now

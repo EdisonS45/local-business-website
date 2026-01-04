@@ -1,5 +1,36 @@
 import Link from "next/link";
 import { servicesConfig } from "@/config/services.config";
+// 1. Import Lucide Icons
+import { 
+  Map, 
+  FileCheck, 
+  Satellite, 
+  Mountain, 
+  Building2, 
+  Compass, 
+  Calculator, 
+  FlaskConical, 
+  Ruler, 
+  LayoutTemplate, 
+  GitBranch, 
+  Globe 
+} from "lucide-react";
+
+// 2. Create a Map for dynamic rendering
+const IconMap: Record<string, any> = {
+  Map,
+  FileCheck,
+  Satellite,
+  Mountain,
+  Building2,
+  Compass,
+  Calculator,
+  FlaskConical,
+  Ruler,
+  LayoutTemplate,
+  GitBranch,
+  Globe
+};
 
 export default function ServicesPage() {
   const categories = ["Legal & Boundary", "Construction & Engineering", "Planning & Design"] as const;
@@ -29,23 +60,33 @@ export default function ServicesPage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {servicesConfig
                 .filter((s) => s.category === cat)
-                .map((service) => (
-                  <Link
-                    key={service.id}
-                    href={`/services/${service.slug}`}
-                    className="group p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-white hover:border-emerald-200 hover:shadow-xl transition-all flex flex-col h-full"
-                  >
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 flex-grow leading-relaxed mb-6">
-                      {service.shortDescription}
-                    </p>
-                    <div className="text-[10px] font-black uppercase tracking-widest text-emerald-600">
-                      View Service Details →
-                    </div>
-                  </Link>
-                ))}
+                .map((service) => {
+                  // 3. Resolve the Icon component
+                  const IconComponent = IconMap[service.iconName] || Map;
+
+                  return (
+                    <Link
+                      key={service.id}
+                      href={`/services/${service.slug}`}
+                      className="group p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-white hover:border-emerald-200 hover:shadow-xl transition-all flex flex-col h-full"
+                    >
+                      {/* 4. Render Icon Box */}
+                      <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-colors">
+                        <IconComponent className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" />
+                      </div>
+
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-slate-500 flex-grow leading-relaxed mb-6">
+                        {service.shortDescription}
+                      </p>
+                      <div className="text-[10px] font-black uppercase tracking-widest text-emerald-600">
+                        View Service Details →
+                      </div>
+                    </Link>
+                  );
+                })}
             </div>
           </div>
         ))}

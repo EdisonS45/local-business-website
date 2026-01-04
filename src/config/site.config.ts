@@ -9,9 +9,9 @@ export const siteConfig = {
   },
 
   contact: {
-    phone: "9597052681",
-    whatsapp: "9597052681",
-    email: "rvspatialsurveys@gmail.com",
+    phone: "9994555634",
+    whatsapp: "9994555634",
+    email: "rvsurveys83@gmail.com",
   },
 
   location: {

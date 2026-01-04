@@ -17,8 +17,7 @@ export default function Footer() {
               <h3 className="text-xl font-bold text-white tracking-tight">RV Spatial Surveys</h3>
               <p className="text-[10px] font-bold text-emerald-500 uppercase tracking-[0.2em] mt-1">Precision First</p>
               <p className="mt-4 text-sm leading-relaxed text-slate-400 max-w-sm">
-                Licensed surveyors specializing in DGPS & Total Station measurements. 
-                Delivering legal-grade reports for Coimbatore & Tiruppur.
+                Professional land survey services in Coimbatore & Tirupur offering licensed surveyors, boundary surveys, topographic surveys, GPS mapping, and approval-ready survey reports.
               </p>
             </div>
             
@@ -45,29 +44,25 @@ export default function Footer() {
                  <WhatsAppButton />
               </div>
             </div>
-            <div className="flex items-start gap-4 pt-6 border-t border-white/5">
+            <div className="flex items-start gap-2 pt-6 border-t border-white/5">
               <div>
                 <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Office</p>
-                <p className="text-xs text-slate-300 mt-1">Tiruppur, Tamil Nadu</p>
+                <p className="text-xs text-slate-300 mt-1">R.s puram 1st Street, PN Rd, Pandian Nagar, Tiruppur, 641602</p>
               </div>
               <div className="w-px h-8 bg-white/10" />
               <div>
                 <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Hours</p>
-                <p className="text-xs text-slate-300 mt-1">Mon—Sat, 9AM-7PM</p>
+                <p className="text-xs text-slate-300 mt-1">Mon—Sun, 24hrs</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar - Ultra Compact */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-white/5 text-center">
           <p className="text-[10px] font-bold text-slate-600 uppercase tracking-[0.2em]">
             © 2026 RV SPATIAL SURVEYS • LICENSED SURVEYORS
           </p>
-          <div className="flex items-center gap-2 px-3 py-1 bg-emerald-500/5 border border-emerald-500/10 rounded-full">
-            <span className="w-1 h-1 bg-emerald-500 rounded-full animate-pulse" />
-            <span className="text-[9px] font-black text-emerald-500 uppercase tracking-[0.2em]">Precision Guaranteed</span>
-          </div>
         </div>
       </div>
     </footer>

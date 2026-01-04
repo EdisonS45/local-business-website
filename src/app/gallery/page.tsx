@@ -3,23 +3,30 @@ import Link from "next/link";
 
 export default function GalleryPage() {
   const galleryItems = [
-    { src: "/images/gallery/16.jpg", alt: "On-site Precision Surveying", category: "Field Work" },
-    { src: "/images/gallery/1.webp", alt: "Boundary Verification", category: "Legal" },
-    { src: "/images/gallery/2.webp", alt: "Topographic Mapping", category: "Planning" },
-    { src: "/images/gallery/3.webp", alt: "Construction Staking", category: "Engineering" },
-    { src: "/images/gallery/4.webp", alt: "Drone Aerial Survey", category: "Technology" },
-    { src: "/images/gallery/5.webp", alt: "FMB Tracking", category: "Government" },
-    { src: "/images/gallery/6.webp", alt: "Digital Contour Maps", category: "Analysis" },
-    { src: "/images/gallery/7.webp", alt: "Large Scale Development", category: "Industrial" },
-    { src: "/images/gallery/8.jpg", alt: "Village Map Study", category: "Records" },
-    { src: "/images/gallery/9.jpg", alt: "GPS Base Station", category: "Precision" },
-    { src: "/images/gallery/10.jpg", alt: "Infrastructure Layout", category: "Public Works" },
-    { src: "/images/gallery/11.jpg", alt: "Residential Partition", category: "Landowner" },
-    { src: "/images/gallery/12.jpg", alt: "Industrial Corridor", category: "Development" },
-    { src: "/images/gallery/13.jpg", alt: "Hydraulic Survey", category: "Specialized" },
-    { src: "/images/gallery/14.jpg", alt: "Final Approval Report", category: "Deliverable" },
-    { src: "/images/gallery/15.jpg", alt: "Topographic Analysis", category: "Engineering" },
-  ];
+  // --- Image 1: Row 1 & 2 ---
+  { src: "/images/gallery/16.jpg", alt: "High-Rise Slab Leveling Survey", category: "Construction" },
+  { src: "/images/gallery/1.webp", alt: "Residential Township Site Survey", category: "Planning" },
+  { src: "/images/gallery/2.webp", alt: "Leica Total Station Site Setup", category: "Engineering" },
+  { src: "/images/gallery/3.webp", alt: "Plinth Level Marking Coimbatore", category: "Construction" },
+  
+  // --- Image 1: Row 3 ---
+  { src: "/images/gallery/4.webp", alt: "Foundation Layout Design Map", category: "Analysis" },
+  { src: "/images/gallery/5.webp", alt: "Digital Stake-out Point Screen", category: "Technology" },
+  { src: "/images/gallery/6.webp", alt: "Diamond City Excavation Verification", category: "Legal" },
+  
+  // --- Image 1 & 2: Row 4 & Transitions ---
+  { src: "/images/gallery/7.webp", alt: "Flowserve Industrial Site Mapping", category: "Industrial" },
+  { src: "/images/gallery/8.jpg", alt: "Precision Foundation Column Survey", category: "Construction" },
+  { src: "/images/gallery/9.jpg", alt: "Leica TS System Site Calibration", category: "Technology" },
+  
+  // --- Image 2: Remaining Items ---
+  { src: "/images/gallery/10.jpg", alt: "Building Boundary & Offset Survey", category: "Legal" },
+  { src: "/images/gallery/11.jpg", alt: "Agricultural Land Boundary Marking", category: "Landowner" },
+  { src: "/images/gallery/12.jpg", alt: "Coconut Grove Property Mapping", category: "Landowner" },
+  { src: "/images/gallery/13.jpg", alt: "Leica TS10 Field Operation", category: "Engineering" },
+  { src: "/images/gallery/14.jpg", alt: "Structural Column Marking", category: "Construction" },
+  { src: "/images/gallery/15.jpg", alt: "Finished Plinth Level Survey Check", category: "Engineering" },
+];
 
   return (
     <section className="py-20 bg-white">

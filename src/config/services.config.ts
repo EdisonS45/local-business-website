@@ -2,12 +2,13 @@ export type LandSizeRange = "<1-acre" | "1-5-acres" | "5-10-acres" | "10+-acres"
 
 export interface SurveyService {
   id: string;
+  iconName: string; // New Property
   title: string;
   slug: string;
   shortDescription: string;
   category: "Legal & Boundary" | "Construction & Engineering" | "Planning & Design";
   bestFor: string;
-  phase: "A" | "specialized"; // A = Landing Page, specialized = Services Page only
+  phase: "A" | "specialized";
   baseEffort: number;
   landSizeMultiplier: Record<LandSizeRange, number>;
   details: {
@@ -22,6 +23,7 @@ export const servicesConfig: SurveyService[] = [
   // --- CATEGORY: Legal & Boundary ---
   {
     id: "boundary-survey",
+    iconName: "Map",
     title: "Boundary Survey",
     slug: "boundary-survey",
     category: "Legal & Boundary",
@@ -39,6 +41,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "document-verification",
+    iconName: "FileCheck",
     title: "Document Verification",
     slug: "document-verification",
     category: "Legal & Boundary",
@@ -56,6 +59,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "control-network",
+    iconName: "Satellite",
     title: "Control Network Establishment",
     slug: "control-network",
     category: "Legal & Boundary",
@@ -75,6 +79,7 @@ export const servicesConfig: SurveyService[] = [
   // --- CATEGORY: Construction & Engineering ---
   {
     id: "topographic-survey",
+    iconName: "Mountain",
     title: "Topographic Survey",
     slug: "topographic-survey",
     category: "Construction & Engineering",
@@ -92,6 +97,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "as-built-survey",
+    iconName: "Building2",
     title: "As-Built Survey",
     slug: "as-built-survey",
     category: "Construction & Engineering",
@@ -109,6 +115,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "setting-out",
+    iconName: "Compass",
     title: "Setting-out Survey",
     slug: "setting-out",
     category: "Construction & Engineering",
@@ -126,6 +133,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "earthwork-calc",
+    iconName: "Calculator",
     title: "Earth Work Calculation",
     slug: "earth-work-calculation",
     category: "Construction & Engineering",
@@ -143,6 +151,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "geotechnical",
+    iconName: "FlaskConical",
     title: "Geotechnical Investigation",
     slug: "geotechnical-investigation",
     category: "Construction & Engineering",
@@ -160,6 +169,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "leveling-survey",
+    iconName: "Ruler",
     title: "Leveling Survey",
     slug: "leveling-survey",
     category: "Construction & Engineering",
@@ -179,6 +189,7 @@ export const servicesConfig: SurveyService[] = [
   // --- CATEGORY: Planning & Design ---
   {
     id: "subdivision",
+    iconName: "LayoutTemplate",
     title: "Subdivision & Layout Design",
     slug: "subdivision-layout",
     category: "Planning & Design",
@@ -196,6 +207,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "alignment-planning",
+    iconName: "GitBranch",
     title: "Alignment Planning Survey",
     slug: "alignment-planning",
     category: "Planning & Design",
@@ -213,6 +225,7 @@ export const servicesConfig: SurveyService[] = [
   },
   {
     id: "master-planning",
+    iconName: "Globe",
     title: "Master Planning Support",
     slug: "master-planning-support",
     category: "Planning & Design",

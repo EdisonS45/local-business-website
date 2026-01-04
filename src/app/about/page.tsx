@@ -141,7 +141,7 @@ export default function AboutPage() {
 
       {/* Trust Badge */}
       <p className="mt-8 text-slate-500 text-xs font-bold uppercase tracking-[0.2em]">
-        Available Mon — Sat: 9:00 AM - 6:00 PM
+        Available Mon — Sun: 24hrs
       </p>
     </div>
   </div>
