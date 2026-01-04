@@ -101,8 +101,9 @@ export default function HomePage() {
       <section className="py-24 bg-white">
         <div className="container px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
-            {/* Added h-[450px] for mobile visibility */}
-            <div className="relative w-full max-w-md h-[450px] md:h-auto md:aspect-[4/5]">
+            
+            {/* IMAGE CONTAINER: Fixed height for mobile (h-[450px]) and desktop (md:h-[550px]) */}
+            <div className="relative w-full max-w-md h-[450px] md:h-[550px]">
               <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-slate-50">
                 <Image 
                   src="/images/owner.jpg" 
@@ -110,8 +111,11 @@ export default function HomePage() {
                   fill 
                   className="object-cover" 
                   sizes="(max-width: 768px) 100vw, 400px"
+                  priority // Ensures the image loads immediately
                 />
               </div>
+              
+              {/* Floating Badge */}
               <div className="absolute -bottom-6 -right-2 md:-right-6 bg-slate-900 text-white p-6 rounded-[2rem] shadow-xl border border-white/10 z-10">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
