@@ -9,8 +9,8 @@ export const siteConfig = {
   },
 
   contact: {
-    phone: "9994555634",
-    whatsapp: "9994555634",
+    phone: "+91 9994555634",
+    whatsapp: "+91 9994555634",
     email: "rvsurveys83@gmail.com",
   },
 
