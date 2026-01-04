@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site.config";
-import { Star, MapPin, CheckCircle2, Quote, ExternalLink, Phone } from "lucide-react";
-import WhatsAppButton from "@/components/common/WhatsAppButton"; // Ensure path is correct
+import { Star, MapPin, CheckCircle2, Quote, ExternalLink, Phone, ArrowRight } from "lucide-react";
+import WhatsAppButton from "@/components/common/WhatsAppButton"; 
 import ClientLogos from "@/components/sections/ClientLogos";
 
 export default function HomePage() {
@@ -29,25 +29,25 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-4xl md:text-5xl font-heading font-extrabold tracking-tight leading-[1.1] text-slate-900">
-  Digital Land Surveyors <br className="hidden md:block" />
-  in{" "}
-  <span 
-    className="relative inline-block translate-y-[1px] text-transparent bg-clip-text bg-emerald-600/90  select-none"
-    style={{ WebkitBackgroundClip: 'text' }}
-  >
-    {siteConfig.location.city}
-  </span>
-</h1>
+                Digital Land Surveyors <br className="hidden md:block" />
+                in{" "}
+                <span 
+                  className="relative inline-block translate-y-[1px] text-transparent bg-clip-text bg-emerald-600/90 select-none"
+                  style={{ WebkitBackgroundClip: 'text' }}
+                >
+                  {siteConfig.location.city}
+                </span>
+              </h1>
 
               <p className="max-w-lg text-base md:text-lg text-slate-600 leading-relaxed">
                 RV Spatial Surveys provides digital <span className="text-slate-900 font-semibold"> land surveying services</span> delivering accurate boundary, topographic, and site survey reports for landowners, builders, and developers.
               </p>
 
-              {/* UPDATED BUTTON SECTION */}
+              {/* BUTTON SECTION: Changed Call to Black on mobile to contrast with sticky footer */}
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
                 <a 
                   href={`tel:${siteConfig.contact.phone}`} 
-                  className="flex items-center justify-center gap-2 w-full sm:w-auto rounded-full bg-emerald-600 px-8 py-4 text-white font-bold transition-all hover:bg-emerald-700 hover:shadow-lg active:scale-95"
+                  className="flex items-center justify-center gap-2 w-full sm:w-auto rounded-full bg-slate-900 sm:bg-emerald-600 px-8 py-4 text-white font-bold transition-all hover:bg-slate-800 active:scale-95 shadow-lg"
                 >
                   <Phone size={18} />
                   Call Engineer
@@ -62,29 +62,26 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="flex-1 relative w-full">
-              <div className="relative aspect-[16/12] rounded-[2.5rem] overflow-hidden border-[12px] border-slate-50 shadow-2xl">
-                <Image src="/images/hero-surveyor4.jpg" alt="Professional Surveying" fill className="object-cover scale-105" priority />
+            {/* IMAGE SECTION: Fixed mobile visibility */}
+            <div className="flex-1 relative w-full h-[300px] sm:h-auto">
+              <div className="relative h-full aspect-[16/12] rounded-[2.5rem] overflow-hidden border-[8px] md:border-[12px] border-slate-50 shadow-2xl">
+                <Image 
+                  src="/images/hero-surveyor4.jpg" 
+                  alt="Professional Surveying" 
+                  fill 
+                  className="object-cover scale-105" 
+                  priority 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
-
-              {/* <div className="absolute -bottom-6 -left-6 bg-white p-5 rounded-[2rem] shadow-xl border border-slate-100 hidden md:block">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-black text-slate-900">100%</span>
-                  <span className="text-emerald-500 font-bold">↑</span>
-                </div>
-                <p className="text-[9px] font-bold uppercase tracking-tighter text-slate-500">Legal Accuracy</p>
-              </div> */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ... Hero Section ends ... */}
-      
       <section className="py-10 border-y border-slate-50 bg-white">
         <div className="container px-6">
           <div className="flex flex-col lg:flex-row items-center gap-8">
-            {/* The Title */}
             <div className="w-full lg:w-1/4 text-center lg:text-left">
               <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">
                 Trusted Partners
@@ -93,8 +90,6 @@ export default function HomePage() {
                 Industry Leaders
               </h3>
             </div>
-
-            {/* The Bus (Marquee) */}
             <div className="w-full lg:w-3/4">
               <ClientLogos />
             </div>
@@ -102,9 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ... Founder Section starts ... */}
-
-      {/* FOUNDER AUTHORITY SECTION */}
+      {/* FOUNDER SECTION */}
       <section className="py-24 bg-white">
         <div className="container px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
@@ -132,6 +125,7 @@ export default function HomePage() {
                   When you hire RV Spatial Survey, you're working directly with licensed professionals. I personally oversee every boundary line and FMB track to ensure 100% legal compliance.
                 </p>
               </div>
+              
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50">
                   <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0" />
@@ -148,12 +142,17 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div className="pt-4 flex items-center gap-6">
-                <Link href="/services" className="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-100">
+
+              {/* SERVICES BUTTONS: Fixed wrapping and alignment */}
+              <div className="pt-4 flex flex-col sm:flex-row items-center gap-6">
+                <Link href="/services" className="w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-lg text-center whitespace-nowrap">
                   Our Services
                 </Link>
-                <Link href={`tel:${siteConfig.contact.phone}`} className="text-sm font-bold text-slate-900 border-b-2 border-emerald-500 pb-1">
-                  Speak with Vishnu →
+                <Link 
+                  href={`tel:${siteConfig.contact.phone}`} 
+                  className="group flex items-center gap-2 text-sm font-bold text-slate-900 border-b-2 border-emerald-500 pb-1 whitespace-nowrap"
+                >
+                  Speak with Vishnu <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -161,7 +160,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* REVIEWS SECTION */}
+      {/* REVIEWS SECTION remains same as requested */}
       <section className="py-24 bg-slate-50/50">
         <div className="container px-6">
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
@@ -176,14 +175,12 @@ export default function HomePage() {
                 Verified Customer <span className="text-emerald-600 italic">Experiences</span>
               </h2>
             </div>
-            
             <Link 
               href={siteConfig.business.name || "#"} 
               target="_blank"
               className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-600 hover:border-emerald-500 hover:text-emerald-600 transition-all shadow-sm"
             >
-              Verify on Google Maps
-              <ExternalLink size={14} />
+              Verify on Google Maps <ExternalLink size={14} />
             </Link>
           </div>
 
@@ -193,12 +190,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
                     <div className="relative w-12 h-12 rounded-2xl overflow-hidden bg-slate-100 border border-slate-50">
-                      <Image 
-                        src={item.image} 
-                        alt={item.name} 
-                        fill 
-                        className="object-cover"
-                      />
+                      <Image src={item.image} alt={item.name} fill className="object-cover" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 text-sm leading-tight">{item.name}</h4>
@@ -207,11 +199,7 @@ export default function HomePage() {
                   </div>
                   <Quote className="w-5 h-5 text-slate-100 group-hover:text-emerald-100 transition-colors" />
                 </div>
-
-                <p className="text-slate-600 text-sm leading-relaxed italic mb-6">
-                  "{item.text}"
-                </p>
-
+                <p className="text-slate-600 text-sm leading-relaxed italic mb-6">"{item.text}"</p>
                 <div className="pt-4 border-t border-slate-50 flex items-center justify-between">
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => <Star key={i} size={10} fill="#fbbf24" className="text-amber-400" />)}
