@@ -106,7 +106,7 @@ export default function HomePage() {
             <div className="relative w-full max-w-md h-[450px] md:h-[550px]">
               <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-slate-50">
                 <Image 
-                  src="/images/owner.jpg" 
+                  src="/images/owner.JPG" 
                   alt="R. Vishnu" 
                   fill 
                   className="object-cover" 
