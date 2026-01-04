@@ -16,26 +16,21 @@ export default function StickyMobileCTA() {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[100] md:hidden">
-      <div className="flex h-16 border-t border-slate-100 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
-        {/* WhatsApp Button - Kept Green */}
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+      <div className="flex h-14 border-t border-slate-200 bg-white">
         <button
           onClick={handleWhatsApp}
-          className="flex-1 flex items-center justify-center gap-2 text-white bg-[#25D366] active:opacity-90 transition-opacity font-bold text-sm"
+          className="flex-1 flex items-center justify-center gap-2 text-white bg-green-600"
         >
-          <MessageCircle size={18} fill="currentColor" />
+          <MessageCircle size={18} />
           WhatsApp
         </button>
 
-        {/* Vertical Divider Line */}
-        <div className="w-[1px] bg-white/20 h-full" />
-
-        {/* Call Now Button - Changed to Black for contrast */}
         <a
           href={`tel:${siteConfig.contact.phone}`}
-          className="flex-1 flex items-center justify-center gap-2 text-white bg-slate-900 active:bg-slate-800 transition-colors font-bold text-sm"
+          className="flex-1 flex items-center justify-center gap-2 text-white bg-safety bg-black-600"
         >
-          <Phone size={18} fill="currentColor" />
+          <Phone size={18} />
           Call Now
         </a>
       </div>
